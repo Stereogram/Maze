@@ -8,7 +8,7 @@ public class Ball : MonoBehaviour
     public int AliveTime;
 
     public AudioClip Hit;
-
+    public Score score;
     private AudioSource _audioSource;
 
     void Start ()
