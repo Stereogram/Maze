@@ -13,8 +13,8 @@ public class Ball : MonoBehaviour
 
     void Start ()
 	{
-        //_score = GameObject.Find("Canvas").GetComponent<Score>();
-        _audioSource = GetComponent<AudioSource>();
+        _score = GameObject.Find("Canvas").GetComponent<Score>();
+        _audioSource = GameObject.Find("FirstPersonCharacter").GetComponent<AudioSource>();
         GetComponent<Rigidbody>().AddForce(transform.forward * Speed, ForceMode.VelocityChange);
 	}
 
@@ -25,14 +25,11 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Unitychan"))
+        _audioSource.PlayOneShot(Hit);
+        if (collision.gameObject.CompareTag("Unitychan"))
         {
-            //_score.SetText();
+            _score.SetText();
             Destroy(gameObject);
-        }
-        else
-        {
-            _audioSource.PlayOneShot(Hit);
         }
     }
 
