@@ -17,8 +17,10 @@ namespace UnityStandardAssets.Characters.FirstPerson {
         private CollisionFlags m_CollisionFlags;
         private bool m_PreviouslyGrounded;
         private bool m_Jumping;
+        private AudioSource _source;
 
         private void Start() {
+            _source = GetComponent<AudioSource>();
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_Jumping = false;
@@ -63,6 +65,11 @@ namespace UnityStandardAssets.Characters.FirstPerson {
                 }
             } else {
                 m_MoveDir += Physics.gravity * m_GravityMultiplier * Time.fixedDeltaTime;
+            }
+            if(desiredMove == Vector3.zero && _source.isPlaying) {
+                _source.Stop();
+            } else {
+                _source.Play();
             }
             m_CollisionFlags = m_CharacterController.Move(m_MoveDir * Time.fixedDeltaTime);
             m_MouseLook.UpdateCursorLock();

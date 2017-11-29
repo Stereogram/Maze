@@ -13,7 +13,7 @@ public class Ball : MonoBehaviour
 
     void Start ()
 	{
-        _audioSource = GameObject.Find("FPSController").GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
         GetComponent<Rigidbody>().AddForce(transform.forward * Speed, ForceMode.VelocityChange);
 	}
 
