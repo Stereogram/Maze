@@ -8,7 +8,6 @@ public class Ball : MonoBehaviour
     public int AliveTime;
 
     public AudioClip Hit;
-    public Score _score;
     private AudioSource _audioSource;
     private Score _score;
 
