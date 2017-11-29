@@ -10,9 +10,11 @@ public class Ball : MonoBehaviour
     public AudioClip Hit;
 
     private AudioSource _audioSource;
+    private Score _score;
 
     void Start ()
 	{
+        _score = GameObject.Find("Canvas").GetComponent<Score>();
         _audioSource = GetComponent<AudioSource>();
         GetComponent<Rigidbody>().AddForce(transform.forward * Speed, ForceMode.VelocityChange);
 	}
@@ -26,7 +28,8 @@ public class Ball : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Unitychan"))
         {
-
+            _score.SetText();
+            Destroy(gameObject);
         }
         else
         {
