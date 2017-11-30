@@ -11,14 +11,14 @@
 | Toggle Flashlight		| F				|
 | Toggle Music			| M				|
 | Reset Position		| Home			|
-| Save					| N				|
-| Load					| M				|
+| Save					| O				|
+| Load					| P				|
 =========================================
 | CONTROLS PS4							|
 =========================================
 | Movement				| Left Stick	|
 | Look					| Right Stick	|
-| Shoot					| 				
+| Shoot					| Left Trigger	|
 | Jump					| Cross			|
 | Toggle Time of Day	| Circle		|
 | Toggle Fog 			| Square		|
@@ -26,6 +26,6 @@
 | Toggle Flashlight		| 				| 
 | Toggle Music			| 				|
 | Reset Position 		| Option		|
-| Save					|
-| Load					|
+| Save					| 				|
+| Load					| 				|
 =========================================

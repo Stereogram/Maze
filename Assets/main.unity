@@ -521,6 +521,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1917f94ac07dfb74b8e3ae0821bc0b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mazeContainer: {fileID: 2103654078}
+  player: {fileID: 479340544}
+  enemy: {fileID: 180653374}
+  flashlight: {fileID: 493554951}
+  score: {fileID: 1860532458}
   mazeScale: 5
   mazeSize: 25
   dayColor: {r: 0.78431374, g: 0.7058824, b: 0.627451, a: 1}
@@ -540,6 +545,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &493554951 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1693728157058826, guid: 3bafd5193e2107f438d2b1b3a56133c0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1116922920}
 --- !u!1 &554005539
 GameObject:
   m_ObjectHideFlags: 0
