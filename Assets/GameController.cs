@@ -63,7 +63,6 @@ public class GameController : MonoBehaviour {
                 RenderSettings.fog = true;
                 _source.volume = 0.5f;
             }
-
         }
         // Toggles player layer from '0' to '9'. When player's layer is '9' they will not collide with walls.
         if (CrossPlatformInputManager.GetButtonDown("Toggle_Collisions")) {
@@ -96,5 +95,13 @@ public class GameController : MonoBehaviour {
                 _source.Play();
             }
         }
+        if (CrossPlatformInputManager.GetButtonDown("Save")) {
+        }
+        if (CrossPlatformInputManager.GetButtonDown("Load")) {
+        }
+    }
+
+    public void SaveGame() {
+
     }
 }
