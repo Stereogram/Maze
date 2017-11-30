@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Unitychan
+  - wall
   layers:
   - Default
   - TransparentFX
