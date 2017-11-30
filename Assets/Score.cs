@@ -8,10 +8,8 @@ public class Score : MonoBehaviour {
     [SerializeField] private Text _scoreText;
     [SerializeField] private int score;
 
-    // Use this for initialization 
     void Start() {
         _scoreText = GameObject.Find("score").GetComponent<Text>();
-        _scoreText.text = "Score: 0";
     }
 
     public void SetText() {
@@ -19,8 +17,12 @@ public class Score : MonoBehaviour {
         _scoreText.text = "Score: " + score;
     }
 
-    // Update is called once per frame 
-    void Update() {
+    public int GetScore() {
+        return score;
+    }
 
+    public void SetScore(int _score) {
+        score = _score;
+        _scoreText.text = "Score: " + score;
     }
 }
