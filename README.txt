@@ -11,8 +11,8 @@
 | Toggle Flashlight		| F				|
 | Toggle Music			| M				|
 | Reset Position		| Home			|
-| Save					|
-| Load					|
+| Save					| N				|
+| Load					| M				|
 =========================================
 | CONTROLS PS4							|
 =========================================
