@@ -23,9 +23,13 @@
 | Toggle Time of Day	| Circle			|
 | Toggle Fog 			| Square			|
 | Toggle Collisions 	| Triangle			|
-| Toggle Flashlight		| Left bumper		| 
+| Toggle Flashlight		| Left bumper		|
 | Toggle Music			| D-Pad Up			|
 | Reset Position 		| Option			|
-| Save					| Click Left Stick	|			|
+| Save					| Click Left Stick	|
 | Load					| Click Right Stick	|
 ============================================|
+
+- To reach pong game enter black rectangle behind the player spawn
+- Pong game ends at '5' or '-5' points
+- Don't load a save before creating one, there is no null check and game will c
