@@ -31,7 +31,7 @@ public class PongController : MonoBehaviour {
         if (Mathf.Abs(ball.transform.position.x) > 10) {
             rbBall.velocity = new Vector3(speed * Mathf.Sign(ball.transform.position.x), Random.Range(-speed, speed), 0);
             score += (int)Mathf.Sign(ball.transform.position.x);
-            scoreText.text = score.ToString();
+            scoreText.text = "Score: " + score.ToString();
             ball.transform.position = Vector3.zero;
         }
 

@@ -17,9 +17,8 @@ public class Door : MonoBehaviour {
 
 
     void OnTriggerEnter(Collider other) {
-        SceneManager.LoadScene("Pong");
-    }
-    void OnCollisionEnter(Collision collision) {
-        SceneManager.LoadScene("Pong");
+        if (other.CompareTag("Player")) {
+            SceneManager.LoadScene("Pong");
+        }
     }
 }

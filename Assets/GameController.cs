@@ -52,10 +52,10 @@ public class GameController : MonoBehaviour {
 
     void Update() {
         // Returns player to the start of the maze.
-		if (CrossPlatformInputManager.GetButtonDown("Reset_Position")) {
+        if (CrossPlatformInputManager.GetButtonDown("Reset_Position")) {
             player.GetComponent<FirstPersonController>().Reset();
         }
-		if (CrossPlatformInputManager.GetButtonDown("Toggle_Fog")) {
+        if (CrossPlatformInputManager.GetButtonDown("Toggle_Fog")) {
             if (RenderSettings.fog) {
                 RenderSettings.fog = false;
                 _source.volume = 1.0f;
@@ -66,30 +66,33 @@ public class GameController : MonoBehaviour {
 
         }
         // Toggles player layer from '0' to '9'. When player's layer is '9' they will not collide with walls.
-		if (CrossPlatformInputManager.GetButtonDown("Toggle_Collisions")) {
+        if (CrossPlatformInputManager.GetButtonDown("Toggle_Collisions")) {
             player.layer = (player.layer == 0) ? 9 : 0;
         }
         // Togges ambient lighting between day and night + changes fog color to match
-		if (CrossPlatformInputManager.GetButtonDown("Toggle_TOD")) {
+        if (CrossPlatformInputManager.GetButtonDown("Toggle_TOD")) {
             if (RenderSettings.ambientLight == dayColor) {
                 RenderSettings.ambientLight = nightColor;
                 _source.clip = nightSound;
-                if(!_source.isPlaying) _source.Play();
+                if (!_source.isPlaying) {
+                    _source.Play();
+                }
             } else {
                 RenderSettings.ambientLight = dayColor;
                 _source.clip = daySound;
-                if (!_source.isPlaying) _source.Play();
+                if (!_source.isPlaying) {
+                    _source.Play();
+                }
             }
-			RenderSettings.fogColor = RenderSettings.ambientLight;
+            RenderSettings.fogColor = RenderSettings.ambientLight;
         }
         if (CrossPlatformInputManager.GetButtonDown("Toggle_Flashlight")) {
             flashlight.SetActive(!flashlight.activeSelf);
         }
-        if(CrossPlatformInputManager.GetButtonDown("Toggle_Music")) {
+        if (CrossPlatformInputManager.GetButtonDown("Toggle_Music")) {
             if (_source.isPlaying) {
                 _source.Stop();
-            }
-            else {
+            } else {
                 _source.Play();
             }
         }
