@@ -32,4 +32,3 @@
 
 - To reach pong game enter black rectangle behind the player spawn
 - Pong game ends at '5' or '-5' points
-- Don't load a save before creating one, there is no null check and game will c

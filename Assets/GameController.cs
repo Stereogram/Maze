@@ -127,17 +127,19 @@ public class GameController : MonoBehaviour {
     }
 
     public void LoadGame() {
-        // rebuild maze
-        foreach (Transform child in mazeContainer.transform) {
-            Destroy(child.gameObject);
+        if (PlayerPrefs.HasKey("MazeData") && PlayerPrefs.HasKey("PlayerX") && PlayerPrefs.HasKey("PlayerY") && PlayerPrefs.HasKey("PlayerZ") && PlayerPrefs.HasKey("EnemyX") && PlayerPrefs.HasKey("EnemyY") && PlayerPrefs.HasKey("EnemyZ") && PlayerPrefs.HasKey("Score")) {
+            // rebuild maze
+            foreach (Transform child in mazeContainer.transform) {
+                Destroy(child.gameObject);
+            }
+            mazeData = (bool[,])PlayerPrefsSerializer.Load("MazeData");
+            BuildMaze(mazeData);
+            // load player position
+            player.transform.position = new Vector3(PlayerPrefs.GetFloat("PlayerX"), PlayerPrefs.GetFloat("PlayerY"), PlayerPrefs.GetFloat("PlayerZ"));
+            // load enemy position
+            enemy.transform.position = new Vector3(PlayerPrefs.GetFloat("EnemyX"), PlayerPrefs.GetFloat("EnemyY"), PlayerPrefs.GetFloat("EnemyZ"));
+            // load score
+            score.SetScore(PlayerPrefs.GetInt("Score"));
         }
-        mazeData = (bool[,])PlayerPrefsSerializer.Load("MazeData");
-        BuildMaze(mazeData);
-        // load player position
-        player.transform.position = new Vector3(PlayerPrefs.GetFloat("PlayerX"), PlayerPrefs.GetFloat("PlayerY"), PlayerPrefs.GetFloat("PlayerZ"));
-        // load enemy position
-        enemy.transform.position = new Vector3(PlayerPrefs.GetFloat("EnemyX"), PlayerPrefs.GetFloat("EnemyY"), PlayerPrefs.GetFloat("EnemyZ"));
-        // load score
-        score.SetScore(PlayerPrefs.GetInt("Score"));
     }
 }
