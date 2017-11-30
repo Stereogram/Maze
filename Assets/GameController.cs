@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour {
     MazeGenerator mazeGenerator;
     Object cellPrefab;
     GameObject player;
+    GameObject flashlight;
 
     private AudioSource _source;
 
@@ -20,6 +21,8 @@ public class GameController : MonoBehaviour {
         mazeGenerator = new MazeGenerator();
         BuildMaze(mazeGenerator.GenerateMaze(mazeSize));
         player = GameObject.Find("FPSController");
+        flashlight = GameObject.Find("Flashlight");
+        flashlight.SetActive(false);
         _source = GameObject.Find("unitychan").GetComponent<AudioSource>();
     }
 
@@ -79,7 +82,9 @@ public class GameController : MonoBehaviour {
             }
 			RenderSettings.fogColor = RenderSettings.ambientLight;
         }
-
+        if (CrossPlatformInputManager.GetButtonDown("Toggle_Flashlight")) {
+            flashlight.SetActive(!flashlight.activeSelf);
+        }
         if(CrossPlatformInputManager.GetButtonDown("Toggle_Music")) {
             if (_source.isPlaying) {
                 _source.Stop();

@@ -591,6 +591,19 @@ Prefab:
       propertyPath: _wallSource
       value: 
       objectReference: {fileID: 479340549}
+    - target: {fileID: 1693728157058826, guid: 3bafd5193e2107f438d2b1b3a56133c0, type: 2}
+      propertyPath: m_Name
+      value: Flashlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 108942092838144004, guid: 3bafd5193e2107f438d2b1b3a56133c0,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693728157058826, guid: 3bafd5193e2107f438d2b1b3a56133c0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114205545151139916, guid: 3bafd5193e2107f438d2b1b3a56133c0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 3bafd5193e2107f438d2b1b3a56133c0, type: 2}
