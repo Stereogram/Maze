@@ -9,8 +9,7 @@ public class PongController : MonoBehaviour {
     public GameObject enemy;
     public Text scoreText;
     public int speed = 10;
-
-    private Rigidbody rbEnemy;
+    
     private Rigidbody rbPlayer;
     private Rigidbody rbBall;
     private int score;
@@ -19,7 +18,6 @@ public class PongController : MonoBehaviour {
         // get rigidbodies
         rbBall = ball.GetComponent<Rigidbody>();
         rbPlayer = player.GetComponent<Rigidbody>();
-        rbEnemy = enemy.GetComponent<Rigidbody>();
 
         // set ball starting velocity
         rbBall.velocity = new Vector3(speed, speed, 0);
